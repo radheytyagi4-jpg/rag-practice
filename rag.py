@@ -11,7 +11,7 @@ load_dotenv()
 
 qdrant_api_key = os.getenv("QDRANT_API_KEY")
 qdrant_url = os.getenv("QDRANT_URL")
-deepsee_api_key = os.getenv("DEEPSEEK_API_KEY")
+# deepsee_api_key = os.getenv("DEEPSEEK_API_KEY")
 
 pdf_path = Path(__file__).parent / "nodejs.pdf"
 loader = PyPDFLoader(file_path=pdf_path)
@@ -36,7 +36,7 @@ vector_store = QdrantVectorStore.from_documents(
     embedding=embedding_model,
     url=qdrant_url,
     api_key=qdrant_api_key,
-    collection_name="rag-leraning"
+    collection_name="rag-practice"
 )
 
 print("indexing is done")
